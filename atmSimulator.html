@@ -22,19 +22,19 @@
     <Script>
        
        let attemps = 3;
-       let pinNo = "1234"
-       let balance = 0
-       let isLocked = false
+       let pinNo = "1234";
+       let balance = 0;
+       let isLocked = false;
 
         function checkPin() {
            // attemps++
            
            if(isLocked == true) {
             document.getElementById("output2").innerHTML = "System is locked. please wait";
-            return
+            return;
            }
            else {
-            attemps--
+            attemps--;
            }
 
             let pin = document.getElementById("pin").value;
@@ -49,13 +49,13 @@
                 <button onclick="withdraw()">WithDraw</button><br>
                 
                 <input id="amountOfDeposit"><br>
-                <button onclick="deposit()">Deposit</button>`
+                <button onclick="deposit()">Deposit</button>`;
 
 
             }
             else if (attemps === 0) {
-                isLocked = true
-                document.getElementById("output").innerHTML = "locked wait 3 seconds"
+                isLocked = true;
+                document.getElementById("output").innerHTML = "locked wait 3 seconds";
                 setTimeout(function sec(){
                      isLocked = false;
                     attemps = 3;
@@ -64,7 +64,7 @@
             }
             else {
                 if(attemps > 0){
-                document.getElementById("output").innerHTML = "wrong pin you only have " + attemps + " attemps"
+                document.getElementById("output").innerHTML = "wrong pin you only have " + attemps + " attemps";
                 }
             }
             
@@ -78,11 +78,11 @@
             let amountOfDeposit = parseFloat(document.getElementById("amountOfDeposit").value);
 
             if(/^[0-9.]+$/.test(amountOfDeposit)){
-            balance += amountOfDeposit
-            document.getElementById("output2").innerHTML = "successfull deposit amount " + balance
+            balance += amountOfDeposit;
+            document.getElementById("output2").innerHTML = "successfull deposit amount " + balance;
         }
             else{
-                document.getElementById("output2").innerHTML = "invalid"
+                document.getElementById("output2").innerHTML = "invalid";
             }
 
         }
@@ -93,14 +93,14 @@
             if(/^[0-9.]+$/.test(amountOfWithdraw)){
                 if(amountOfWithdraw <= balance){
                 balance -= amountOfWithdraw;
-                document.getElementById("output2").innerHTML = "successfully withdraw amount " 
+                document.getElementById("output2").innerHTML = "successfully withdraw amount " ;
             }
                 else {
-                    document.getElementById("output2").innerHTML = "not enought balance"
+                    document.getElementById("output2").innerHTML = "not enought balance";
                 }
             }
             else {
-                document.getElementById("output2").innerHTML = "invalid"}
+                document.getElementById("output2").innerHTML = "invalid";}
 
         }
 
