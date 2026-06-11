@@ -87,7 +87,7 @@
         function withdraw() {
             let amountOfWithdraw = parseFloat(document.getElementById("amountOfWithdraw").value);
 
-            if(/^[0-9.]+$/.test(amountOfWithdraw)){
+            if(/^[0-9.]+$/.test(amountOfWithdraw)) {
                 if(amountOfWithdraw <= balance){
                 balance -= amountOfWithdraw;
                 document.getElementById("output2").innerHTML = "successfully withdraw amount " ;
